@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta</title>
+    <link rel="stylesheet" href="Styles.css">
+    <script>
+        function mostrarMensaje() {
+            // Mostrar la respuesta con animación
+            document.getElementById("respuesta").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("respuesta").classList.add("mostrar");
+            }, 10);
+            
+            // Reproducir el audio
+            const audio = document.getElementById("audio");
+            audio.play();
+        }
+
+        function cerrarPagina() {
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    <!-- Video de fondo -->
+    <div class="video-container">
+        <video autoplay muted loop id="background-video">
+            <source src="Fondo.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <h1>¿Quieres saber algo?</h1>
+        <div class="buttons">
+            <button onclick="mostrarMensaje()">Sí</button>
+            <button onclick="cerrarPagina()">No</button>
+        </div>
+    </div>
+
+    <!-- Sección de respuesta más abajo -->
+    <div id="respuesta" class="hidden">
+        <img src="Image.jpg" alt="Programación">
+        <p>"El dia que te conoci, no esperaba conocer a nadie sin embargo apareciste<br>
+		formaste parte de mi vida, y ahora que estas aqui no te quiero dejar ir<br>
+		siempre eres valiente y me gusta verte sonreir, gracias a ti empeza a ver la vida con otro color
+		<br>Te quedo lindo el detalle de aparecer en mi vida, y ahora que estas en ella no quiero que te vayas<br>
+		Gracias por estar mi vida, no te vayas nunca porfa.
+		</p>
+    </div>
+
+    <!-- Audio oculto -->
+    <audio id="audio" src="Reason.mp3" preload="auto"></audio>
+</body>
+</html>
